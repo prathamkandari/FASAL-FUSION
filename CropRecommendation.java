@@ -6,6 +6,22 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+class Tree {
+    int depth;
+    Node[] nodeArray;
+}
+
+class Node {
+    Node parent;
+    int feature;
+    int index;
+    String threshold;
+    ArrayList<Integer> leftIndices;
+    ArrayList<Integer> rightIndices;
+    Node leftChild;
+    Node rightChild;
+}
+
 public class CropRecommendation {
     public static ArrayList<String[]> data;
     public static Map<Integer, String> thresholdMap;
@@ -148,7 +164,7 @@ public class CropRecommendation {
                     featureStatus.put(thisFeature, true);
                     String threshold = thresholdMap.get(thisFeature);
                     tree.nodeArray[i].leftIndices = new ArrayList<>();
-                    tree.nodeArray[i].rightIndices = a```
+                    tree.nodeArray[i].rightIndices = new ArrayList<>();
                     tree.nodeArray[i].threshold = threshold;
                     for (int index = 0; index < data.size(); index++) {
                         if (data.get(index)[thisFeature].equals(threshold)) {
@@ -240,6 +256,11 @@ public class CropRecommendation {
         while (i < tree.nodeArray.length) {
             Node thisNode = tree.nodeArray[i];
             if (thisNode.threshold != null) {
+                if (i >= inputRecord.length) {
+                    System.out.println("Error: Insufficient input data.");
+                    break;
+                }
+    
                 if (inputRecord[thisNode.feature].equals(thisNode.threshold)) {
                     if (thisNode.leftChild != null) {
                         i = thisNode.leftChild.index;
@@ -282,4 +303,3 @@ public class CropRecommendation {
         return prediction;
     }
 }
-
