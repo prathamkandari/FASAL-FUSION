@@ -260,8 +260,9 @@ public class CropRecommendation {
                     System.out.println("Error: Insufficient input data.");
                     break;
                 }
-    
-                if (inputRecord[thisNode.feature].equals(thisNode.threshold)) {
+
+                // Convert the input and threshold values to strings and then compare
+                if (String.valueOf(inputRecord[thisNode.feature]).equals(thisNode.threshold)) {
                     if (thisNode.leftChild != null) {
                         i = thisNode.leftChild.index;
                     } else {
@@ -275,7 +276,7 @@ public class CropRecommendation {
                     }
                 }
             } else {
-                System.out.println("Nothing learnt from training data");
+                System.out.println("Nothing learned from training data");
                 break;
             }
         }
