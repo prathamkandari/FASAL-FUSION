@@ -32,9 +32,10 @@ public class CropRecommendation {
         thresholdMap = new HashMap<>();
 
         // Read the CSV file and build the decision tree
-        readCSVFile("C:\\Project\\FASAL-FUSION\\data\\Crop_recommendation.csv"); // Replace with your file path
-        buildDecisionTree(3); // Specify the depth of the decision tree
-
+        readCSVFile("C:\\Users\\Manav Khandurie\\Downloads\\FASAL-FUSION\\CropRecommendation.java");
+        buildDecisionTree(10); // Specify the depth of the decision tree
+        //System.out.println(data);
+        System.out.println(thresholdMap);
         // Get input values for nitrogen, phosphorus, and potassium
         Scanner input = new Scanner(System.in);
         System.out.print("Enter Nitrogen value: ");
@@ -43,7 +44,7 @@ public class CropRecommendation {
         double phosphorus = input.nextDouble();
         System.out.print("Enter Potassium value: ");
         double potassium = input.nextDouble();
-
+        //System.out.print(tree);
         // Create a data record for prediction
         String[] inputRecord = { String.valueOf(nitrogen), String.valueOf(phosphorus), String.valueOf(potassium) };
 
@@ -252,35 +253,46 @@ public class CropRecommendation {
     }
 
     public static String makeCropRecommendation(String[] inputRecord) {
-        int i = 0;
-        while (i < tree.nodeArray.length) {
-            Node thisNode = tree.nodeArray[i];
-            if (thisNode.threshold != null) {
-                if (i >= inputRecord.length) {
-                    System.out.println("Error: Insufficient input data.");
-                    break;
-                }
-    
-                if (inputRecord[thisNode.feature].equals(thisNode.threshold)) {
-                    if (thisNode.leftChild != null) {
-                        i = thisNode.leftChild.index;
+        System.out.println(tree!=null);
+        System.out.println(tree.nodeArray != null);
+        System.out.println(tree.nodeArray.length);
+
+        if (tree != null && tree.nodeArray != null) {
+            int i = 0;
+            while (i < tree.nodeArray.length) {
+                Node thisNode = tree.nodeArray[i];
+                System.out.println(thisNode != null );//System.out.println(thisNode.threshold != null);
+                if (thisNode != null && thisNode.threshold != null) {
+                    if (i >= inputRecord.length) {
+                        System.out.println("Error: Insufficient input data.");
+                        return "Insufficient data"; // return a specific value to indicate the issue
+                    }
+                    System.out.println("-->"+(thisNode.feature < inputRecord.length && inputRecord[thisNode.feature].equals(thisNode.threshold)));
+                    if (thisNode.feature < inputRecord.length && inputRecord[thisNode.feature].equals(thisNode.threshold)) {
+                        if (thisNode.leftChild != null) {
+                            i = thisNode.leftChild.index;
+                        } else {
+                            return getPrediction(thisNode.leftIndices);
+                        }
                     } else {
-                        return getPrediction(thisNode.leftIndices);
+                        if (thisNode.rightChild != null) {
+                            i = thisNode.rightChild.index;
+                        } else {
+                            return getPrediction(thisNode.rightIndices);
+                        }
                     }
                 } else {
-                    if (thisNode.rightChild != null) {
-                        i = thisNode.rightChild.index;
-                    } else {
-                        return getPrediction(thisNode.rightIndices);
-                    }
+                    System.out.println("Nothing learned from training data or encountered a null node!");
+                    return "No learning or null node"; // return a specific value for such cases
                 }
-            } else {
-                System.out.println("Nothing learnt from training data");
-                break;
             }
+        } else {
+            System.out.println("Decision tree is not constructed or nodeArray is null.");
+            return "Tree not built"; // return a specific value for this case
         }
         return "Unknown";
     }
+    
 
     public static String getPrediction(ArrayList<Integer> indices) {
         int y = data.get(indices.get(0)).length - 1;
