@@ -35,7 +35,7 @@ public class CropRecommendation {
         readCSVFile("C:\\Users\\Manav Khandurie\\Downloads\\FASAL-FUSION\\data\\Crop_recommendation.csv");
         buildDecisionTree(2); // Specify the depth of the decision tree
         //System.out.println(data);
-        //System.out.println(thresholdMap);
+        System.out.println(thresholdMap);
         // Get input values for nitrogen, phosphorus, and potassium
         Scanner input = new Scanner(System.in);
         System.out.print("Enter Nitrogen value: ");
@@ -77,7 +77,7 @@ public class CropRecommendation {
                 //System.out.println(line);
                 // Split the line into fields using the delimiter
                 String[] fields = line.split(csvSplitBy);
-                System.out.print(fields);
+                //System.out.print(fields);
                 // Process the fields as needed and store them in the 'data' ArrayList
                 data.add(fields);
             }
@@ -100,7 +100,7 @@ public class CropRecommendation {
             tMap.put(i, data.get(0)[i]);
         }
         thresholdMap = tMap;
-
+        System.out.println("Tmap:--"+tMap);
         for (int i = 0; i < tree.nodeArray.length; i++) {
             if (i > 0) {
                 int parentIndex = 0;
