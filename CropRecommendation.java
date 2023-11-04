@@ -32,10 +32,10 @@ public class CropRecommendation {
         thresholdMap = new HashMap<>();
 
         // Read the CSV file and build the decision tree
-        readCSVFile("C:\\Users\\Manav Khandurie\\Downloads\\FASAL-FUSION\\CropRecommendation.java");
-        buildDecisionTree(10); // Specify the depth of the decision tree
+        readCSVFile("C:\\Users\\Manav Khandurie\\Downloads\\FASAL-FUSION\\data\\Crop_recommendation.csv");
+        buildDecisionTree(2); // Specify the depth of the decision tree
         //System.out.println(data);
-        System.out.println(thresholdMap);
+        //System.out.println(thresholdMap);
         // Get input values for nitrogen, phosphorus, and potassium
         Scanner input = new Scanner(System.in);
         System.out.print("Enter Nitrogen value: ");
@@ -44,9 +44,19 @@ public class CropRecommendation {
         double phosphorus = input.nextDouble();
         System.out.print("Enter Potassium value: ");
         double potassium = input.nextDouble();
+        // System.out.print("Enter humidity value: ");
+        // double humidity = input.nextDouble();
+        // System.out.print("Enter ph value: ");
+        // double ph = input.nextDouble();
+        // System.out.print("Enter temp value: ");
+        // double temp = input.nextDouble();
+        // System.out.print("Enter rain value: ");
+        // double rain = input.nextDouble();
         //System.out.print(tree);
         // Create a data record for prediction
-        String[] inputRecord = { String.valueOf(nitrogen), String.valueOf(phosphorus), String.valueOf(potassium) };
+        String[] inputRecord = { String.valueOf(nitrogen), String.valueOf(phosphorus), String.valueOf(potassium) ,
+            //String.valueOf(humidity),String.valueOf(ph),String.valueOf(temp),String.valueOf(rain)
+        };
 
         // Make a crop recommendation
         String recommendedCrop = makeCropRecommendation(inputRecord);
@@ -64,10 +74,10 @@ public class CropRecommendation {
                     skipHeader = false;
                     continue; // Skip the header
                 }
-
+                //System.out.println(line);
                 // Split the line into fields using the delimiter
                 String[] fields = line.split(csvSplitBy);
-
+                System.out.print(fields);
                 // Process the fields as needed and store them in the 'data' ArrayList
                 data.add(fields);
             }
