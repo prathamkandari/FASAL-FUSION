@@ -220,9 +220,9 @@ class SplitResult {
     }
 }
 
-public class Test_Final {
+public class Test_Final {   
     public static void main(String[] args) {
-        String csvFile = "C:\\Users\\Manav Khandurie\\Downloads\\FASAL-FUSION\\data\\Crop_recommendation.csv";
+        String csvFile = "C:\\Users\\Manav Khandurie\\Downloads\\FASAL-FUSION\\data\\TrainingData.csv";
         String line;
         String csvSplitBy = ",";
         String[] colNames = { "N", "P", "K", "temperature", "humidity", "ph", "rainfall", "label" };
