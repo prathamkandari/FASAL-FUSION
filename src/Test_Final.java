@@ -245,7 +245,7 @@ public class Test_Final implements Serializable {
             e.printStackTrace();
         }
 
-        classifier = new DecisionTreeClassifier(3, 7);
+        classifier = new DecisionTreeClassifier(3, 10);
         classifier.root = classifier.buildTree(data, 0);
     }
 
