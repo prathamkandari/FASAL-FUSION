@@ -228,7 +228,7 @@ public class Test_Final implements Serializable {
 
     static DecisionTreeClassifier classifier;
     public static void initalize(){
-        String csvFile = "C:\\Users\\Manav Khandurie\\Downloads\\FASAL-FUSION\\data\\TrainingData.csv";
+        String csvFile = "C:\\Users\\Manav Khandurie\\Downloads\\FASAL-FUSION\\data\\training_data.csv";
         String line;
         String csvSplitBy = ",";
         //String[] colNames = { "N", "P", "K", "temperature", "humidity", "ph", "rainfall", "label" };
@@ -245,7 +245,7 @@ public class Test_Final implements Serializable {
             e.printStackTrace();
         }
 
-        classifier = new DecisionTreeClassifier(3, 3);
+        classifier = new DecisionTreeClassifier(3, 7);
         classifier.root = classifier.buildTree(data, 0);
     }
 
