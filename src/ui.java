@@ -43,7 +43,7 @@ public class ui extends Test_Final {
                     BorderFactory.createEmptyBorder(0, 0, 10, 0)  // Adjust the spacing as needed
             ));
         }
-        Test_Final.initalize();
+        //Test_Final.initalize();
 
         JButton analyzeButton = new JButton("Analyse");
         inputPanel.add(analyzeButton);
@@ -59,7 +59,7 @@ public class ui extends Test_Final {
                     for (int i = 0; i < fieldLabels.length; i++) {
                         values[i] = Double.parseDouble(textFields[i].getText());
                     }
-                    String result = Test_Final.middleware(values[0], values[1], values[2], values[3], values[4], values[5], values[6]);
+                    String result = loadModel.middleware(values[0], values[1], values[2], values[3], values[4], values[5], values[6]);
                     System.out.println(result); 
                     // Show result in a popup dialog
                     JOptionPane.showMessageDialog(frame, "Recommended Crop: \n" + result);
