@@ -242,7 +242,7 @@ class DecisionTreeClassifier implements Serializable {
     }
 }
 
-public class Test_Final implements Serializable {   
+public class createModel implements Serializable {   
     static DecisionTreeClassifier classifier;
 
     // Initialize and train the model
@@ -279,7 +279,15 @@ public class Test_Final implements Serializable {
     public static void main(String[] args) {
         System.out.println("Trainning the model");
         initalize();
-        String input;
+        System.out.println("Trainning Completed!!!!!!");
+        // Save the trained model to a file
+        classifier.saveModel("C:\\Users\\Manav Khandurie\\Downloads\\FASAL-FUSION\\models\\trained_model.ser");
+    }
+}
+
+/*
+ * 
+String input;
         double nitrogen, phosphorus, potassium, temp, ph, humidity, rain;
 
         input = System.console().readLine("Enter the value of N: ");
@@ -303,11 +311,7 @@ public class Test_Final implements Serializable {
         input = System.console().readLine("Enter the value of rain: ");
         rain = Double.parseDouble(input);
         middleware(nitrogen, phosphorus, potassium, temp, humidity, ph, rain);
-        System.out.println("Trainning Completed!!!!!!");
-        // Save the trained model to a file
-        classifier.saveModel("C:\\Users\\Manav Khandurie\\Downloads\\FASAL-FUSION\\models\\trained_model.ser");
-    }
-}
+ */
 
 
 

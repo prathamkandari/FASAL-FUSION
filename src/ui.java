@@ -14,20 +14,20 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class ui extends Test_Final {
+public class ui  {
     
     public static void main(String[] args) {
         
         JFrame frame = new JFrame("FASAL Fusion");
-        frame.setSize(350, 550); 
+        frame.setSize(1500, 250); 
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
         JLabel label = new JLabel("FASAL Fusion");
-        label.setFont(new Font("Arial", Font.BOLD, 20));
+        label.setFont(new Font("Arial", Font.BOLD, 40));
         panel.add(label, BorderLayout.NORTH);
         JPanel inputPanel = new JPanel();
         inputPanel.setLayout(new FlowLayout());
-        String[] fieldLabels = {"Nitrogen", "Phosphorous", "Potassium", "Temperature", "Rainfall", "pH", "Humidity"};
+        String[] fieldLabels = {"Nitrogen", "Phosphorous", "Potassium", "Temperature", "humidity", "pH", "Rainfall"};
         JLabel[] labels = new JLabel[fieldLabels.length];
         JTextField[] textFields = new JTextField[fieldLabels.length];
         

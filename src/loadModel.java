@@ -2,9 +2,13 @@ package src;
 public class loadModel {
 
     static DecisionTreeClassifier loadedModel = DecisionTreeClassifier.loadModel("C:\\\\Users\\\\Manav Khandurie\\\\Downloads\\\\FASAL-FUSION\\\\models\\\\trained_model.ser");
+    public static DecisionTreeClassifier getModel(){
+        return loadedModel;
+    }
+    
     public static String middleware(double nitrogen, double phosphorus, double potassium, double temp, double humidity, double ph, double rain){
         String result="";
-        result=loadedModel.predictCrop(75,88,98,50,54,1,70);
+        result=loadedModel.predictCrop(nitrogen,phosphorus,potassium,temp,humidity,ph,rain);
         return result;
     }
     public static void main(String[] args) {
