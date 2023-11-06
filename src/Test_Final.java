@@ -22,6 +22,22 @@ class Node {
         this.value = value;
     }
 }
+class SplitResult {
+    int featureIndex;
+    double threshold;
+    String[][] datasetLeft;
+    String[][] datasetRight;
+    double infoGain;
+
+    SplitResult() {
+        featureIndex = -1;
+        threshold = -1;
+        datasetLeft = null;
+        datasetRight = null;
+        infoGain = -1;
+    }
+    
+}
 
 class DecisionTreeClassifier {
     Node root;
@@ -207,22 +223,6 @@ class DecisionTreeClassifier {
 
 }
 
-class SplitResult {
-    int featureIndex;
-    double threshold;
-    String[][] datasetLeft;
-    String[][] datasetRight;
-    double infoGain;
-
-    SplitResult() {
-        featureIndex = -1;
-        threshold = -1;
-        datasetLeft = null;
-        datasetRight = null;
-        infoGain = -1;
-    }
-    
-}
 
 public class Test_Final implements Serializable {   
 
@@ -255,6 +255,9 @@ public class Test_Final implements Serializable {
         System.out.println("Recommended Crop: " + recommendedCrop);
         return recommendedCrop;
     }
+    
+    
+
     public static void main(String[] args) {
         initalize();
         String input;
