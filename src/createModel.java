@@ -1,11 +1,8 @@
 package src;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Serializable;
-import java.util.Arrays;
 
-class Node {
+import java.io.*;
+import java.util.Arrays;
+class Node implements Serializable {
     int featureIndex;
     double threshold;
     Node left;
@@ -23,7 +20,23 @@ class Node {
     }
 }
 
-class DecisionTreeClassifier {
+class SplitResult implements Serializable {
+    int featureIndex;
+    double threshold;
+    String[][] datasetLeft;
+    String[][] datasetRight;
+    double infoGain;
+
+    SplitResult() {
+        featureIndex = -1;
+        threshold = -1;
+        datasetLeft = null;
+        datasetRight = null;
+        infoGain = -1;
+    }
+}
+
+class DecisionTreeClassifier implements Serializable {
     Node root;
     int minSamplesSplit;
     int maxDepth;
@@ -31,6 +44,30 @@ class DecisionTreeClassifier {
     DecisionTreeClassifier(int minSamplesSplit, int maxDepth) {
         this.minSamplesSplit = minSamplesSplit;
         this.maxDepth = maxDepth;
+    }
+
+    // ... existing DecisionTreeClassifier methods ...
+
+    // Serialization method to save the model
+    public void saveModel(String filePath) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filePath))) {
+            oos.writeObject(this); // Write the current object to the file
+            System.out.println("Model saved successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Deserialization method to load the model
+    public static DecisionTreeClassifier loadModel(String filePath) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filePath))) {
+            DecisionTreeClassifier model = (DecisionTreeClassifier) ois.readObject();
+            System.out.println("Model loaded successfully.");
+            return model;
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     Node buildTree(String[][] dataset, int currDepth) {
@@ -203,31 +240,13 @@ class DecisionTreeClassifier {
             return "Unknown"; // Handle the case when the feature index is out of bounds
         }
     }
-
-
 }
 
-class SplitResult {
-    int featureIndex;
-    double threshold;
-    String[][] datasetLeft;
-    String[][] datasetRight;
-    double infoGain;
-
-    SplitResult() {
-        featureIndex = -1;
-        threshold = -1;
-        datasetLeft = null;
-        datasetRight = null;
-        infoGain = -1;
-    }
-    
-}
-
-public class Test_Final implements Serializable {   
-
+public class createModel implements Serializable {   
     static DecisionTreeClassifier classifier;
-    public static void initalize(){
+
+    // Initialize and train the model
+    public static void initalize() {
         String csvFile = "C:\\Users\\Manav Khandurie\\Downloads\\FASAL-FUSION\\data\\training_data.csv";
         String line;
         String csvSplitBy = ",";
@@ -249,16 +268,27 @@ public class Test_Final implements Serializable {
         classifier.root = classifier.buildTree(data, 0);
     }
 
+    // Middleware method to predict using the model
     public static String middleware(double nitrogen, double phosphorus, double potassium, double temp, double humidity, double ph, double rain){
         System.out.println(nitrogen+","+ phosphorus+","+ potassium+","+temp+","+humidity+","+ph+","+rain);
         String recommendedCrop = classifier.predictCrop(nitrogen, phosphorus, potassium,temp,humidity,ph,rain);
         System.out.println("Recommended Crop: " + recommendedCrop);
         return recommendedCrop;
     }
+
     public static void main(String[] args) {
+        System.out.println("Trainning the model");
         initalize();
-        String input;
-        double nitrogen, phosphorus, potassium,temp,ph,humidity,rain;
+        System.out.println("Trainning Completed!!!!!!");
+        // Save the trained model to a file
+        classifier.saveModel("C:\\Users\\Manav Khandurie\\Downloads\\FASAL-FUSION\\models\\trained_model.ser");
+    }
+}
+
+/*
+ * 
+String input;
+        double nitrogen, phosphorus, potassium, temp, ph, humidity, rain;
 
         input = System.console().readLine("Enter the value of N: ");
         nitrogen = Double.parseDouble(input);
@@ -280,9 +310,8 @@ public class Test_Final implements Serializable {
 
         input = System.console().readLine("Enter the value of rain: ");
         rain = Double.parseDouble(input);
+        middleware(nitrogen, phosphorus, potassium, temp, humidity, ph, rain);
+ */
 
-        
-        middleware(nitrogen, phosphorus, potassium,temp,humidity,ph,rain);
-        
-    }
-}
+
+
