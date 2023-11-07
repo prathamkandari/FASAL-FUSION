@@ -1,6 +1,7 @@
 <div align='center'>
 
-## FASAL-FUSION
+
+![Group 26](https://github.com/prathamkandari/FASAL-FUSION/assets/107267866/73a51274-045a-483c-80b3-b9b1f998b166)
 
 
 </div>
