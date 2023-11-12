@@ -39,8 +39,8 @@ public class MyLambdaFunction implements RequestHandler<Map<String, Double>, Map
 
                 System.out.println("Class loader: " + getClass().getClassLoader());
                 System.out.println("Model stream: " + modelStream);
-                this.model = (DecisionTreeClassifier) ois.readObject();
-                System.out.println(this.model);
+                model = (DecisionTreeClassifier) ois.readObject();
+                System.out.println(model);
                 System.out.println("seems to work");
                 System.out.println("Model loaded successfully!");
                 c=model.predictCrop(N, P, K, temp, humidity, ph, rain);
