@@ -20,18 +20,18 @@ document.getElementById('apiButton').addEventListener('click', function() {
 
 // Sample input data
 const inputData = {
-    N: 100.0,
-    P: 50.0,
-    K: 30.0,
-    temp: 25.0,
-    humidity: 70.0,
-    ph: 6.5,
-    rain: 50.0
+    N: '100.0',
+    P: '50.0',
+    K: '30.0',
+    temp: '25.0',
+    humidity: '70.0',
+    ph: '6.5',
+    rain: '50.0'
   };
   
   // AWS API Gateway endpoint
   const apiEndpoint = 'https://9jecftzm79.execute-api.us-east-1.amazonaws.com/phase2/sum';
-  
+  console.log(JSON.stringify(inputData));
   // Fetch options
   const fetchOptions = {
     method: 'POST',
