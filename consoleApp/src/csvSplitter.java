@@ -48,9 +48,9 @@ public class csvSplitter {
     }
 
     public static void main(String[] args) {
-        String inputCSV = "C:\\Users\\Manav Khandurie\\Downloads\\FASAL-FUSION\\data\\Crop_recommendation.csv";
-        String outputCSV1 = "C:\\Users\\Manav Khandurie\\Downloads\\FASAL-FUSION\\data\\training_data.csv";
-        String outputCSV2 = "C:\\Users\\Manav Khandurie\\Downloads\\FASAL-FUSION\\data\\testing_data.csv";
+        String inputCSV = "C:\\Project\\FASAL-FUSION\\Fasal Fusion New\\FASAL-FUSION\\consoleApp\\data\\Crop_recommendation.csv";
+        String outputCSV1 = "C:\\Project\\FASAL-FUSION\\Fasal Fusion New\\FASAL-FUSION\\consoleApp\\data\\training_data.csv";
+        String outputCSV2 = "C:\\Project\\FASAL-FUSION\\Fasal Fusion New\\FASAL-FUSION\\consoleApp\\data\\testing_data.csv";
         double ratio = 0.7;
 
         splitCSV(inputCSV, outputCSV1, outputCSV2, ratio);

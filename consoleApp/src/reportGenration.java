@@ -16,7 +16,7 @@ public class reportGenration {
             return Double.MIN_VALUE;
         }
 
-        String csvFile = "C:\\Users\\Manav Khandurie\\Downloads\\FASAL-FUSION\\data\\testing_data.csv";
+        String csvFile = "C:\\Project\\FASAL-FUSION\\Fasal Fusion New\\FASAL-FUSION\\consoleApp\\data\\testing_data.csv";
         String line;
         String csvSplitBy = ",";
         String[][] data = new String[0][];

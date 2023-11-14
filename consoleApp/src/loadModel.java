@@ -4,7 +4,7 @@ import java.io.File;
 
 public class loadModel {
 
-    static DecisionTreeClassifier loadedModel = DecisionTreeClassifier.loadModel("https://fasalfusion.s3.amazonaws.com/trained_model.ser");
+    static DecisionTreeClassifier loadedModel = DecisionTreeClassifier.loadModel("C:\\Project\\FASAL-FUSION\\Fasal Fusion New\\FASAL-FUSION\\consoleApp\\models\\trained_model.ser");
     public static DecisionTreeClassifier getModel(){
         return loadedModel;
     }

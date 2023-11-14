@@ -247,7 +247,7 @@ public class createModel implements Serializable {
 
     // Initialize and train the model
     public static void initalize() {
-        String csvFile = "C:\\Users\\Manav Khandurie\\Downloads\\FASAL-FUSION\\data\\training_data.csv";
+        String csvFile = "C:\\Project\\FASAL-FUSION\\Fasal Fusion New\\FASAL-FUSION\\consoleApp\\data\\training_data.csv";
         String line;
         String csvSplitBy = ",";
         //String[] colNames = { "N", "P", "K", "temperature", "humidity", "ph", "rainfall", "label" };
@@ -281,7 +281,7 @@ public class createModel implements Serializable {
         initalize();
         System.out.println("Trainning Completed!!!!!!");
         // Save the trained model to a file
-        classifier.saveModel("C:\\Users\\Manav Khandurie\\Downloads\\FASAL-FUSION\\models\\trained_model.ser");
+        classifier.saveModel("C:\\Project\\FASAL-FUSION\\Fasal Fusion New\\FASAL-FUSION\\consoleApp\\models\\trained_model.ser");
     }
 }
 
