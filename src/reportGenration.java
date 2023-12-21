@@ -122,3 +122,7 @@ public class reportGenration {
         choice = Integer.parseInt(sc.nextLine());
     }
 }
+/*
+ * 
+ * "24,70,21,19.14729038,45.3733757,5.517208078,132.7748215,pigeonpeas"
+ */
