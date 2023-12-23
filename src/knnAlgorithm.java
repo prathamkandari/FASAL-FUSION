@@ -91,7 +91,7 @@ public class knnAlgorithm implements Serializable {
         // double rainfall = 7.311077075;
         // double pH = 199.3355744;
         // String result = obj.middleware(n, p, kValue, temperature, humidity, rainfall,
-        // pH);
+        // pH);//Jute
         // System.out.println(result);
 
     }

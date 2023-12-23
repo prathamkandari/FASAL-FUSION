@@ -67,7 +67,7 @@ public class loadModel {
         }
 
         else if (knnAlgo != null && !flag) {
-            result = knnAlgo.predictCrop(221.0, 1.0, 1.0, 2.52, 52.0, 25.0, 25.0);
+            result = knnAlgo.predictCrop(nitrogen, phosphorus, potassium, temp, humidity, ph, rain);
             System.out.println(result);
         } else if (!flag)
             System.out.println("No KNN Model Created");
