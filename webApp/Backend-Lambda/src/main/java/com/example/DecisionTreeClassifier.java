@@ -1,40 +1,12 @@
-package src;
+package com.example;
 
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.Arrays;
-class Node implements Serializable {
-    int featureIndex;
-    double threshold;
-    Node left;
-    Node right;
-    double infoGain;
-    String value;
-
-    Node(int featureIndex, double threshold, Node left, Node right, double infoGain, String value) {
-        this.featureIndex = featureIndex;
-        this.threshold = threshold;
-        this.left = left;
-        this.right = right;
-        this.infoGain = infoGain;
-        this.value = value;
-    }
-}
-
-class SplitResult implements Serializable {
-    int featureIndex;
-    double threshold;
-    String[][] datasetLeft;
-    String[][] datasetRight;
-    double infoGain;
-
-    SplitResult() {
-        featureIndex = -1;
-        threshold = -1;
-        datasetLeft = null;
-        datasetRight = null;
-        infoGain = -1;
-    }
-}
 
 class DecisionTreeClassifier implements Serializable {
     Node root;
@@ -46,7 +18,7 @@ class DecisionTreeClassifier implements Serializable {
         this.maxDepth = maxDepth;
     }
 
-    // ... existing DecisionTreeClassifier methods ...
+    
 
     // Serialization method to save the model
     public void saveModel(String filePath) {
@@ -241,77 +213,3 @@ class DecisionTreeClassifier implements Serializable {
         }
     }
 }
-
-public class createModel implements Serializable {   
-    static DecisionTreeClassifier classifier;
-
-    // Initialize and train the model
-    public static void initalize() {
-        String csvFile = "C:\\Users\\Manav Khandurie\\Downloads\\FASAL-FUSION\\data\\training_data.csv";
-        String line;
-        String csvSplitBy = ",";
-        //String[] colNames = { "N", "P", "K", "temperature", "humidity", "ph", "rainfall", "label" };
-        String[][] data = new String[0][];
-
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-            br.readLine(); // Skip the header row
-            while ((line = br.readLine()) != null) {
-                String[] values = line.split(csvSplitBy);
-                data = Arrays.copyOf(data, data.length + 1);
-                data[data.length - 1] = values;
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        classifier = new DecisionTreeClassifier(3, 10);
-        classifier.root = classifier.buildTree(data, 0);
-    }
-
-    // Middleware method to predict using the model
-    public static String middleware(double nitrogen, double phosphorus, double potassium, double temp, double humidity, double ph, double rain){
-        System.out.println(nitrogen+","+ phosphorus+","+ potassium+","+temp+","+humidity+","+ph+","+rain);
-        String recommendedCrop = classifier.predictCrop(nitrogen, phosphorus, potassium,temp,humidity,ph,rain);
-        System.out.println("Recommended Crop: " + recommendedCrop);
-        return recommendedCrop;
-    }
-
-    public static void main(String[] args) {
-        System.out.println("Trainning the model");
-        initalize();
-        System.out.println("Trainning Completed!!!!!!");
-        // Save the trained model to a file
-        classifier.saveModel("C:\\Users\\Manav Khandurie\\Downloads\\FASAL-FUSION\\models\\trained_model.ser");
-    }
-}
-
-/*
- * 
-String input;
-        double nitrogen, phosphorus, potassium, temp, ph, humidity, rain;
-
-        input = System.console().readLine("Enter the value of N: ");
-        nitrogen = Double.parseDouble(input);
-
-        input = System.console().readLine("Enter the value of P: ");
-        phosphorus = Double.parseDouble(input);
-
-        input = System.console().readLine("Enter the value of K: ");
-        potassium = Double.parseDouble(input);
-
-        input = System.console().readLine("Enter the value of temp: ");
-        temp = Double.parseDouble(input);
-
-        input = System.console().readLine("Enter the value of humidity: ");
-        humidity = Double.parseDouble(input);
-
-        input = System.console().readLine("Enter the value of ph: ");
-        ph = Double.parseDouble(input);
-
-        input = System.console().readLine("Enter the value of rain: ");
-        rain = Double.parseDouble(input);
-        middleware(nitrogen, phosphorus, potassium, temp, humidity, ph, rain);
- */
-
-
-
