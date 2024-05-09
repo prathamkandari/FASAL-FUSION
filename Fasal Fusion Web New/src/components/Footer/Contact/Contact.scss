@@ -1,0 +1,159 @@
+.contact-us-section {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    background: #f9f9f9 url("../../../assets/plant_bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .glassmorphism-effect {
+        width: 100%;
+        height: 80%;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        border: 8px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        display: flex;
+        align-items: center;
+        margin: 0 40px;
+
+
+        .contact-us-content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .left-content {
+            flex: 1;
+            text-align: center;
+
+            input {
+                border: 2px solid #A2D3B3;
+            }
+
+            textarea {
+                border: 2px solid #A2D3B3;
+            }
+
+            button {
+                z-index: 100;
+                cursor: pointer;
+                background-color: #368942;
+                transition: 0.2s ease-in-out;
+            }
+
+            button:hover {
+                background-color: #A2D3B3;
+                color: #202022;
+            }
+        }
+
+        .right-content {
+            display: flex;
+            text-align: center;
+            // margin-left: 5%;
+            padding: 0;
+            flex: 1;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+
+            .small-text {
+                margin-top: 2%;
+                font-size: 60px;
+                justify-content: center;
+                text-align: center;
+                display: flex;
+                flex: 1;
+                color: #f9f9f9;
+            }
+
+            .big-text {
+                padding-top: 8px;
+                font-size: 20px;
+                justify-content: center;
+                text-align: center;
+                display: flex;
+                flex: 1;
+                color: #f9f9f9;
+            }
+        }
+
+        form {
+            z-index: -1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .input-row .contact-input-box {
+            flex: 1;
+        }
+
+        .full-width-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .contact-input-box-message {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            border: 1px solid rgba(0, 0, 0, .2);
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .contact-input-box {
+            width: 100%;
+            max-width: 300px;
+            padding: 1px;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            border: 2px solid rgba(0, 0, 0, 1);
+        }
+
+        button {
+            z-index: 100;
+            width: 100%;
+            max-width: 200px;
+            padding: 10px;
+            background-color: #38E54D;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .text {
+            font-size: 16px;
+            color: rgba(255, 255, 255, .5);
+        }
+    }
+}
