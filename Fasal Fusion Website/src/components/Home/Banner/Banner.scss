@@ -1,0 +1,134 @@
+@import "../../../css-config/mixins.scss";
+
+.hero-banner {
+    padding: 40px 0;
+    position: relative;
+    // background-image: linear-gradient(to right, #9CFF2E, #38E54D);
+    background-image: url("../../../assets/Nurture\ Pitch.jpg");
+    background-size: cover;
+
+    @include md {
+        // height: calc(100vh - 70px);
+        height: calc(100vh - 63px); //Atharv ko bolna
+    }
+
+    .content {
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column-reverse;
+        max-width: calc(100vh - 20px);
+        margin: 0 auto;
+        position: relative;
+
+        @include md {
+            flex-direction: row;
+            max-width: 1200px;
+        }
+
+        .banner-img {
+            z-index: 9;
+            width: 200px;
+            margin-bottom: 20px;
+
+            @include md {
+                position: relative; //Atharv ko bolna
+                bottom: 25px; //Atharv ko bolna
+                width: 500px;
+                margin-right: 60px;
+                margin-top: 50px;
+                margin-bottom: 0;
+            }
+
+            @include xxl {
+                width: 600px;
+                margin-right: 0;
+                margin-top: 0;
+            }
+        }
+
+        .text-content {
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @include md {
+                position: absolute;
+                left: 50px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            @include xxl {
+                left: 0;
+            }
+
+            h1 {
+                color: #67C440;
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 1;
+                margin-bottom: 20px;
+
+                @include md {
+                    font-size: 100px;
+                }
+            }
+
+            p {
+                color: #368942;
+                max-width: 300px;
+                font-size: 14px;
+                line-height: 20px;
+                margin-bottom: 20px;
+
+                @include md {
+                    max-width: 500px;
+                    font-size: 20px;
+                    line-height: 24px;
+                    margin-bottom: 40px;
+                }
+            }
+
+            .ctas {
+                z-index: 100;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+
+                .banner-cta {
+                    background-color: #368942;
+                    color: #fafafa;
+                    text-transform: uppercase;
+                    font-size: 13px;
+                    font-weight: 500;
+                    border: none;
+                    border-radius: 8px;
+                    padding: 10px 20px;
+                    cursor: pointer;
+                    transition: 0.2s ease-in-out;
+                    
+                    &.v2 {
+                        background-color: #368942;
+                        color: #fafafa;
+                        cursor: pointer;
+                    }
+
+                    &:hover {
+                        background-color: #A2D3B3;
+                        color: #000;
+                        cursor: pointer;
+                        opacity: .6;
+                    }
+                }
+            }
+        }
+    }
+
+    .content::after{
+        z-index: -1;
+    }
+}

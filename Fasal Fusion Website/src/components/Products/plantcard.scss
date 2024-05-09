@@ -1,0 +1,44 @@
+// PlantCard.scss
+@import "../../css-config/mixins.scss";
+
+.plant-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 20px;
+
+    .image-container {
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+
+    .details {
+        padding: 20px;
+
+        .scientific-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .humidity,
+        .water-intake {
+            margin-bottom: 10px;
+        }
+
+        .common-problems {
+            ul {
+                list-style: none;
+                padding: 0;
+
+                li {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+}
