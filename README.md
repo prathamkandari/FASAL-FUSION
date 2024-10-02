@@ -13,6 +13,9 @@
 
 ![Static Badge](https://img.shields.io/badge/HTML-101010?logo=html5&logoColor=%23E34F26) ![Static Badge](https://img.shields.io/badge/JavaScript-101010?logo=javascript&logoColor=%23F7DF1E) ![Static Badge](https://img.shields.io/badge/CSS-202020?logo=css3&logoColor=%231572B6) ![Static Badge](https://img.shields.io/badge/AWS-202020?logo=aws&logoColor=%231572B6)
 
+### Architecture 
+
+![fasalfusion2](https://github.com/user-attachments/assets/e386c5b5-396f-4298-a4a5-4dd217ceb7cc)
 
 ### Contributing
 
