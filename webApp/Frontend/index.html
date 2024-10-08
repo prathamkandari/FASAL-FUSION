@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>THE CODE REVIEW</title>
+	<title>FASAL FUSION</title>
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,6 +12,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300i" rel="stylesheet">
+	<link rel="icon" type="image/x-icon" href="./img/logo.png">
 
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -19,110 +20,511 @@
 </head>
 
 <body>
-	<!-- <div class="header">
-		<h1>THE CODE REVIEW</h1>
-	</div> -->
 	<div class="container">
 
 		<h2>FASAL FUSION</h2>
-		<img class="logoone" src="/img/logo.png" alt="">
+		<!-- <img class="logoone" src="/img/logo.png" alt=""> -->
 		<p class="para1">A Crop Recommendation System</p>
 
-		<!-- <div class="border-up"></div> -->
-		<!-- <div class="border-down"></div> -->
 		<form id="dataForm">
 			<fieldset>
-				<legend class="contact" style="margin-left: 9%;">Input Values:</legend>
-				<button type="button" class="two" id="language-button" data-language="hindi" onclick="changeLanguage()">Hindi</button>
+				<legend class="contact" style="margin-left: 9%;">Soil Parameters:</legend>
+				<button type="button" class="two" id="language-button" data-language="hindi"
+					onclick="changeLanguage()">हिन्दी</button>
 				<br /><br /><br />
 				<div class="row">
 					<label for="name">Nitrogen</label>
+					<select class="option" id="nitrogenUnit">
+						<option value="kg/ha">ratio</option>
+						<!-- <option value="ppm">ppm</option> -->
+						<!-- Add more units as needed -->
+					</select>
 					<div class="tf">
-						<input type="text" id="Nitrogen" name="user_name" placeholder="Required"><br />
+						<input type="text" id="Nitrogen" name="user_name" placeholder="Enter value of N" required><br />
 					</div>
 				</div>
 				<div class="row">
 					<label for="email">Phosphorus</label>
+					<select class="optiontwo" id="nitrogenUnit">
+						<option value="kg/ha">ratio</option>
+						<!-- <option value="ppm">ppm</option> -->
+						<!-- Add more units as needed -->
+					</select>
 					<div class="tf">
-						<input type="text" id="Phosphorus" name="user_mail" placeholder="Required"><br />
+						<input type="text" id="Phosphorus" name="user_mail" placeholder="Enter value of P"
+							required><br />
 					</div>
 				</div>
 				<div class="row">
 					<label for="number">Potassium</label>
+					<select class="optionthree" id="nitrogenUnit">
+						<option value="kg/ha">ratio</option>
+						<!-- <option value="ppm">ppm</option> -->
+						<!-- Add more units as needed -->
+					</select>
 					<div class="tf">
-						<input type="text" id="Potassium" name="user_number" placeholder="Required"><br />
+						<input type="text" id="Potassium" name="user_number" placeholder="Enter value of K"
+							required><br />
 					</div>
 				</div>
 				<div class="row">
 					<label for="address">Temperature</label>
+					<select class="optionfour" id="nitrogenUnittwo">
+						<option value="°Cel">°Cel</option>
+						<option value="°Fah">°Fah</option>
+						<!-- Add more units as needed -->
+					</select>
 					<div class="tf">
-						<input type="text" id="Temperature" name="user_address" placeholder="Required"><br />
+						<input type="text" id="Temperature" name="user_address" placeholder="Enter value of temperature"
+							required><br />
 					</div>
 				</div>
 				<div class="row">
 					<label for="city">pH</label>
+					<select class="optionfive" id="nitrogenUnit">
+						<option value="">No Unit</option>
+						<!-- Add more units as needed -->
+					</select>
 					<div class="tf">
-						<input type="text" id="pH" name="user_city" placeholder="Required"><br />
+						<input type="text" id="pH" name="user_city" placeholder="Enter value of pH" required><br />
 					</div>
 				</div>
-				<!-- <div class="row">
-					<label for="state">State</label>
-					<div class="tf">
-						<select id="state"><br><br />
-							<option value="" disabled selected class="dis">Choose State</option>
-							<option value="Maharashtra">Maharashtra</option>
-							<option value="Gujarat">Gujarat</option>
-							<option value="Madhaya Pradesh">Madhaya Pradesh</option>
-							<option value="Punjab">Punjab</option>
-							<option value="Karnataka">Karnataka</option>
-							<option value="Andhara Pradesh">Andhara Pradesh </option>
-							<option value="Uttarakhand">Uttarakhand</option>
-							<option value="Meghalaya">Meghalaya</option>
-							<option value="Sikkim">Sikkim</option>
-							<option value="Tamil Nadu">Tamil Nadu</option>
-							<option value="Kerela">Kerela</option>
-						</select>
-					</div>
-				</div> -->
+
 				<div class="row">
 					<label for="city">Humidity</label>
+					<select class="optionsix" id="nitrogenUnit">
+						<option value="kg/ha">in %</option>
+						<!-- <option value="ppm">ppm</option> -->
+						<!-- Add more units as needed -->
+					</select>
 					<div class="tf">
-						<input type="text" id="Humidity" name="user_city" placeholder="Required"><br />
+						<input type="text" id="Humidity" name="user_city" placeholder="Enter value of humidity"
+							required><br />
 					</div>
 				</div>
-				<!-- <div class="row">
-					<label for="zip">Zip Code</label><br><br />
-					<div class="tf">
-						<input type="number" id="zip" name="zip_code" placeholder="511098"><br><br />
-					</div>
-				</div> -->
 				<div class="row">
 					<label for="city">Rainfall</label>
+					<select class="optionseven" id="nitrogenUnitthree">
+						<option value="kg/ha">mm</option>
+						<option value="ppm">cm</option>
+						<!-- Add more units as needed -->
+					</select>
 					<div class="tf">
-						<input type="text" id="Rainfall" name="user_city" placeholder="Required"><br />
+						<input type="text" id="Rainfall" name="user_city" placeholder="Enter value of rainfall"
+							required><br />
 					</div>
 				</div>
 			</fieldset>
-			<!-- <div class="border_3"></div> -->
-			<!-- <fieldset>
-				<legend class="newsletter">Newsletter</legend>
-				<p> Select the newsletter you would like to receive.</p>
-				<input type="checkbox" name="html" value="HTML"><label class="checkbox-label"> HTML</label><br><br />
-				<input type="checkbox" name="css" value="CSS"><label class="checkbox-label"> CSS News</label><br><br />
-				<input type="checkbox" name="javascript" value="Javascript"><label class="checkbox-label"> Javascript
-					News</label><br></br>
-				<p>Newsletter Format</p>
-				<input type="radio" name="radio" value="Html_format"><label> HTML</label><br></br />
-				<input type="radio" name="radio" value="Plain_format"><label> Plain text</label><br><br />
-				<p>Other topics you would like to hear about</p>
-				<textarea class="area" rows="3"></textarea>
-			</fieldset> -->
-			<button type="submit" style="margin-top: 2%;" id="apiButton">Analyze </button>
+
+			<button class="btnn" type="button" style="margin-top: 2%;" onclick="analyzeData()" id="apibutton">Analyze
+			</button>
 			<p class="footer">&copy; Copyright The FASAL FUSION</p>
 		</form>
 	</div>
+	<div id="popup" class="popup">
+		<div class="popup-content">
+			<!-- <span class="close" onclick="closePopup()">&times;</span> -->
+			<!-- Include the content of the second code here -->
+			<article class="card card__content">
+				<header>
+					<img id="cropImage" class="crop-image" src="" alt="Crop Image"
+						style="background-size: cover; background: no-repeat;">
+					<figcaption class="header__caption" role="presentation">
+						<span class="header__tag tag--primary" style="margin-top: 40%;"></span>
+						<span class="header__tag tag--secondary" style="margin-top: 63%;"><span id="tag">Fasal
+							</span>Fusion</span>
+					</figcaption>
+				</header>
+				<main class="card__body">
+					<h1 class="title--primary">Recommended Crop</h1>
+					<p class="description">
+						<!-- Wheat is a type of cereal grain that is widely used for human consumption
+						and for producing other grains such as barley and oats. -->
+					</p>
+				</main>
+				<footer class="footer">
+					<div class="expand__indicator">
+						<span class="link__text">Read more</span>
+					</div>
+					<div class="footer__navigation">
+						<button class="icon__link" onclick="closePopup()">
+							Close
+						</button>
+					</div>
+				</footer>
+			</article>
+		</div>
+	</div>
 
-	<script src="index.js"></script>
+	<script>
+		// Function to change language
+		function changeLanguage() {
+			var header = document.querySelectorAll('.container h2');
+			var para = document.querySelectorAll('.para1');
+			var legendd = document.querySelectorAll('legend');
+			var analyze = document.querySelectorAll('.btnn');
+			var foot = document.querySelectorAll('.footer');
+			// var place = document.querySelectorAll('.tf input[placeholder]');
+			var labels = document.querySelectorAll('.row label');
+			var languageButton = document.getElementById('language-button');
+			var isHindi = languageButton.getAttribute('data-language') === 'hindi';
+
+			// Define translations
+			var translations = {
+				'english': ['Nitrogen', 'Phosphorus', 'Potassium', 'Temperature', 'pH', 'Humidity', 'Rainfall'],
+				'hindi': ['नाइट्रोजन', 'फास्फोरस', 'पोटैशियम', 'तापमान', 'पीएच मान', 'आर्द्रता', 'वर्षा']
+			};
+			var translations2 = {
+				'english': ['FASAL FUSION'],
+				'hindi': ['फसल फ्यूजन']
+			};
+
+			var translations3 = {
+				'english': ['A Crop Recommendation System'],
+				'hindi': ['फसल सिफारिश सिस्टम']
+			};
+
+			var translations4 = {
+				'english': ['Soil Parameters'],
+				'hindi': ['मृदा पैरामीटर्स']
+			};
+
+			var translations5 = {
+				'english': ['Analyze'],
+				'hindi': ['विश्लेषण']
+			};
+
+			var translations6 = {
+				'english': ['© Copyright The FASAL FUSION'],
+				'hindi': ['© कॉपीराइट द फसल फ्यूजन']
+			};
+
+			// var translations7 = {
+			// 	'english': ['Enter value of N', 'Enter value of P', 'Enter value of K', 'Enter value of temperature', 'Enter value of pH', 'Enter value of humidity', 'Enter value of rainfall'],
+			// 	'hindi': ['N का मूल्य दर्ज करें', 'P का मूल्य दर्ज करें', 'K का मूल्य दर्ज करें', 'तापमान का मूल्य दर्ज करें', 'pH का मूल्य दर्ज करें', 'आर्द्रता का मूल्य दर्ज करें', 'वर्षा का मूल्य दर्ज करें']
+			// };
+			// Set the label texts based on the current language
+			labels.forEach((label, index) => {
+				label.textContent = isHindi ? translations['hindi'][index] : translations['english'][index];
+			});
+
+			header.forEach((label, index) => {
+				label.textContent = isHindi ? translations2['hindi'][index] : translations2['english'][index];
+			});
+
+			para.forEach((label, index) => {
+				label.textContent = isHindi ? translations3['hindi'][index] : translations3['english'][index];
+			});
+
+			legendd.forEach((label, index) => {
+				label.textContent = isHindi ? translations4['hindi'][index] : translations4['english'][index];
+			});
+
+			analyze.forEach((label, index) => {
+				label.textContent = isHindi ? translations5['hindi'][index] : translations5['english'][index];
+			});
+
+			foot.forEach((label, index) => {
+				label.textContent = isHindi ? translations6['hindi'][index] : translations6['english'][index];
+			});
+
+			// place.forEach((label, index) => {
+			// 	label.textContent = isHindi ? translations7['hindi'][index] : translations7['english'][index];
+			// });
+			// Set the button text based on the current language
+			languageButton.textContent = isHindi ? 'English' : 'हिन्दी';
+
+			// Toggle the language attribute
+			languageButton.setAttribute('data-language', isHindi ? 'english' : 'hindi');
+		}
+
+		// Function to show the popup with dynamic content
+
+		// Function to show the popup with dynamic content
+		function showPopup(crop) {
+			var popup = document.getElementById("popup");
+			var cropTag = document.getElementById("tag");
+			var cropImage = document.getElementById("cropImage");
+
+			// Define mapping of crops to background images and descriptions
+			var cropData = {
+				'wheat': {
+					imagePath: '../img/Wheat.jpg',
+					description: 'Wheat is a type of cereal grain that is widely used for human consumption and for producing other grains such as barley and oats.'
+				},
+				'rice': {
+					imagePath: '../img/rice.jpg',
+					description: 'Rice is a staple cereal grain extensively consumed by humans and utilized in the production of various food products.'
+				},
+				'maize': {
+					imagePath: '../img/maize.jpg',
+					description: 'Maize is another type of cereal grain commonly ingested by people and employed in the cultivation of diverse crops.'
+				},
+				'banana': {
+					imagePath: '../img/banana.jpg',
+					description: 'Banana is a tropical fruit widely consumed by humans and used in various culinary applications.'
+				},
+				'apple': {
+					imagePath: '../img/apple.jpg',
+					description: 'Apples are a popular fruit known for their crisp texture and sweet flavor, commonly eaten fresh or used in desserts and beverages.'
+				},
+				'blackgram': {
+					imagePath: '../img/blackgram.jpg',
+					description: 'Blackgram, a type of pulse, is frequently utilized in cooking and is a significant source of protein in many cuisines.'
+				},
+				'chickpea': {
+					imagePath: '../img/chickpea.jpg',
+					description: 'Chickpeas, also known as garbanzo beans, are legumes often included in diverse dishes and are valued for their nutritional content.'
+				},
+				'coconut': {
+					imagePath: '../img/coconut.png',
+					description: 'Coconut is a versatile fruit commonly used in cooking, baking, and for extracting coconut milk, providing a rich flavor to many dishes.'
+				},
+				'coffee': {
+					imagePath: '../img/coffee.jpg',
+					description: 'Coffee, a popular beverage worldwide, is made from roasted coffee beans and is enjoyed for its stimulating effects and diverse flavor profiles.'
+				},
+				'cotton': {
+					imagePath: '../img/cotton.jpg',
+					description: 'Cotton, a widely cultivated crop, is a primary source of natural fiber used in the textile industry to produce various clothing and fabrics.'
+				},
+				'grapes': {
+					imagePath: '../img/grapes.jpg',
+					description: 'Grapes, sweet and juicy fruits, are not only enjoyed fresh but are also used in winemaking and as a snack or ingredient in various dishes.'
+				},
+				'jute': {
+					imagePath: '../img/jute.png',
+					description: 'Jute is a fibrous plant whose fibers are used to make strong and durable materials, particularly in the production of sacks and textiles.'
+				},
+				'kidneybeans': {
+					imagePath: '../img/kidneybeans.jpg',
+					description: 'Kidney beans, a type of legume, are commonly used in cooking and are a good source of protein, often featured in salads, stews, and other dishes.'
+				},
+				'lentils': {
+					imagePath: '../img/lentil.jpg',
+					description: 'Lentils, nutritious legumes, are widely utilized in cooking, known for their high protein content and versatility in various cuisines.'
+				},
+				'mango': {
+					imagePath: '../img/mango.png',
+					description: 'Mango, a tropical fruit, is cherished for its sweet and succulent flesh, enjoyed fresh, in smoothies, desserts, or as a flavoring in dishes.'
+				},
+				'mothbeans': {
+					imagePath: '../img/mothbeans.jpg',
+					description: 'Moth beans, a type of legume, are used in culinary preparations and are valued for their nutritional benefits.'
+				},
+				'mungbean': {
+					imagePath: '../img/mungbean.jpg',
+					description: 'Mung beans, a common ingredient in many Asian cuisines, are versatile legumes known for their nutritional value and culinary applications.'
+				},
+				'muskmelon': {
+					imagePath: '../img/muskmelon.jpg',
+					description: 'Muskmelon, a sweet and fragrant fruit, is often enjoyed fresh and is a refreshing addition to salads and desserts.'
+				},
+				'orange': {
+					imagePath: '../img/orange.jpg',
+					description: 'Oranges, citrus fruits rich in vitamin C, are enjoyed fresh, juiced, or used as a flavorful ingredient in various recipes.'
+				},
+				'papaya': {
+					imagePath: '../img/papaya.jpg',
+					description: 'Papaya, a tropical fruit, is known for its vibrant color and sweet taste, commonly eaten fresh or used in smoothies and salads.'
+				},
+				'pigeonpeas': {
+					imagePath: '../img/pigeonpeas.jpg',
+					description: 'Pigeon peas, a type of legume, are widely cultivated and used in various culinary dishes for their nutty flavor and nutritional value.'
+				},
+				'pomegranate': {
+					imagePath: '../img/pomegranate.jpg',
+					description: 'Pomegranate, with its juicy and jewel-like seeds, is consumed fresh or used to add a burst of flavor to salads, desserts, and beverages.'
+				},
+				'watermelon': {
+					imagePath: '../img/watermelon.jpg',
+					description: 'Watermelon, a hydrating and refreshing fruit, is commonly enjoyed fresh, particularly in the summertime, and used in beverages and salads.'
+				}
+				// Add more crops as needed
+			};
+
+			// Convert the crop name to lowercase
+			var lowercaseCrop = crop.toLowerCase();
+
+			// Update the content of the primary tag with the API result
+			var primaryTag = document.querySelector('.header__tag.tag--primary');
+			primaryTag.textContent = crop;
+
+			cropTag.textContent = "Fasal ";  // Assuming "Fusion" is a constant part of the content
+
+			// Update background image and description based on the recommended crop
+			if (cropData[lowercaseCrop]) {
+				cropImage.src = cropData[lowercaseCrop].imagePath;
+				popup.style.backgroundSize = 'cover';
+				document.querySelector('.description').textContent = cropData[lowercaseCrop].description;
+			} else {
+				// Handle the case where crop data is not available
+				console.error('Crop data not available for:', lowercaseCrop);
+			}
+
+			popup.style.display = "block";
+		}
+
+		// Function to make API call
+		function analyzeData() {
+			// Get user input values
+			const nitrogen = document.getElementById('Nitrogen').value;
+			const phosphorus = document.getElementById('Phosphorus').value;
+			const potassium = document.getElementById('Potassium').value;
+			const temperatureInputElement = document.getElementById('Temperature');
+			const temperatureUnit = document.getElementById('nitrogenUnittwo').value;
+			const temperature = convertTemperature(temperatureInputElement.value, temperatureUnit);
+
+			// Function 
+			function convertTemperature(value, unit) {
+				if (unit === '°Fah') {
+					// Convert Fahrenheit to Celsius
+					return convertToFahrenheitToCelsius(value);
+				} else {
+					// Assume the input is already in Celsius
+					return value;
+				}
+			}
+
+			const pH = document.getElementById('pH').value;
+			const humidity = document.getElementById('Humidity').value;
+			const rainfallInputElement = document.getElementById('Rainfall');
+			const rainfallUnit = document.getElementById('nitrogenUnitthree').value;
+			const rainfall = convertRainfall(rainfallInputElement.value, rainfallUnit);
+
+			// Functipn
+			function convertRainfall(value, unit) {
+				if (unit === 'cm') {
+					// Convert Fahrenheit to Celsius
+					return convertTomm(value);
+				} else {
+					// Assume the input is already in Celsius
+					return value;
+				}
+			}
+
+			// 
+			const nitrogentwo = document.getElementById('Nitrogen');
+			const phosphorustwo = document.getElementById('Phosphorus');
+			const potassiumtwo = document.getElementById('Potassium');
+			const temperaturetwo = document.getElementById('Temperature');
+			const pHtwo = document.getElementById('pH');
+			const humiditytwo = document.getElementById('Humidity');
+			const rainfalltwo = document.getElementById('Rainfall');
+
+			if (!nitrogen || !phosphorus || !potassium || !temperature || !pH || !humidity || !rainfall) {
+				// Display popup with "Please enter all values" message
+				alert('Please enter all the values');
+				return;
+			}
+			// Check if input values exceed specified limits
+
+			if (
+				nitrogen > 150 ||
+				phosphorus > 150 ||
+				potassium > 210 ||
+				temperature > 44 ||
+				pH > 10 ||
+				humidity > 100 ||
+				rainfall > 299
+			) {
+				// Display popup with "Invalid Data" message
+				alert('Invalid Data');
+				if (nitrogen > 150) {
+					nitrogentwo.style.border = '2px solid red';
+					document.getElementById('Nitrogen').value = null;
+				}
+				if (phosphorus > 150) {
+					phosphorustwo.style.border = '2px solid red';
+					document.getElementById('Phosphorus').value = null;
+				}
+				if (potassium > 210) {
+					potassiumtwo.style.border = '2px solid red';
+					document.getElementById('Potassium').value = null;
+				}
+				if (temperature > 44) {
+					temperaturetwo.style.border = '2px solid red';
+					document.getElementById('Temperature').value = null;
+				}
+				if (pH > 10) {
+					pHtwo.style.border = '2px solid red';
+					document.getElementById('pH').value = null;
+				}
+				if (humidity > 100) {
+					humiditytwo.style.border = '2px solid red';
+					document.getElementById('Humidity').value = null;
+				}
+				if (rainfall > 299) {
+					rainfalltwo.style.border = '2px solid red';
+					document.getElementById('Rainfall').value = null;
+				}
+				return;
+			}
+
+			// Sample input data
+			const inputData = {
+				N: nitrogen,
+				P: phosphorus,
+				K: potassium,
+				temp: temperature,
+				humidity: humidity,
+				ph: pH,
+				rain: rainfall
+			};
+
+			// AWS API Gateway endpoint
+			const apiEndpoint = 'https://czf5169uj1.execute-api.us-east-1.amazonaws.com/fasalfusion/calc';
+			console.log('Input Data:', JSON.stringify(inputData));
+
+			// Fetch options
+			const fetchOptions = {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+					// Add any additional headers if needed
+				},
+				body: JSON.stringify(inputData)
+			};
+
+			// Make the API call
+			fetch(apiEndpoint, fetchOptions)
+				.then(response => {
+					// Check if the response status is OK (2xx)
+					if (!response.ok) {
+						throw new Error(`HTTP error! Status: ${response.status}`);
+					}
+					// Parse the JSON response
+					return response.json();
+				})
+				.then(result => {
+					// Process the result
+					console.log('API Result:', result);
+					// Assuming you have a function to handle the result and display the popup
+					showPopup(result.Crop);
+				})
+				.catch(error => {
+					// Handle errors
+					console.error('Error:', error.message);
+				});
+		}
+		function closePopup() {
+			var popup = document.getElementById("popup");
+			popup.style.display = "none";
+		}
+
+		function convertToFahrenheitToCelsius(fahrenheit) {
+			return (fahrenheit - 32) * (5 / 9);
+		}
+
+		function convertTomm(value) {
+			return parseFloat(value) * 10;
+		}
+
+
+		// Event listener for the "Analyze" button
+		document.getElementById('apibutton').addEventListener('click', analyzeData);
+	</script>
+
 </body>
 
 </html>
